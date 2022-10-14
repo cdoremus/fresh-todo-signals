@@ -1,0 +1,58 @@
+html,
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: monospace;
+  background: #ddd;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem auto 3rem;
+  font-size: clamp(2em, 10vw, 8em);
+  font-weight: 400;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+input,
+label {
+  margin: 2px;
+}
+
+li {
+  /* text-align: center; */
+  list-style: none;
+  /* padding-left: 40%; */
+  margin: 0.7em 0;
+}
+
+.todos {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-item {
+  display: flex;
+  align-content: left;
+  margin: 0.4rem 0;
+}
+
+.item-todo {
+  width: 140%;
+  padding-right: 5px;
+}
+
+.x-button {
+  margin-left: 0.5rem;
+  align-content: left;
+}
