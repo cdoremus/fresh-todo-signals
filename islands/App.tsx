@@ -9,7 +9,7 @@ export default function App() {
   return (
     <div className="App">
       <AppState.Provider value={state}>
-        <h1>Todos</h1>
+        <h1>Deno Fresh Todos</h1>
         <TodoList />
         <AddTodo />
       </AppState.Provider>
