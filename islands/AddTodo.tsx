@@ -1,5 +1,5 @@
 import { useContext } from "preact/hooks";
-import { AppState } from "../routes/_app.tsx";
+import { AppState } from "../components/App.tsx";
 import type { AppStateType } from "../state.ts";
 
 export default function AddTodo() {
@@ -15,8 +15,8 @@ export default function AddTodo() {
           onChange={(
             e: Event,
             // @ts-ignore TodoSignal type assumed
-          ) => (newtodo.value = e.target.value ?? "")}
-        />
+            ) => newtodo.value = e.target?.value ?? ""
+          }/>
         <input type="submit" value="Add" />
       </label>
     </form>
