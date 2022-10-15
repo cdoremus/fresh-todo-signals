@@ -14,5 +14,5 @@ export default function App() {
         <AddTodo />
       </AppState.Provider>
     </div>
-  )
+  );
 }

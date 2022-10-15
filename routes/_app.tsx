@@ -6,14 +6,14 @@ export default function AppLayout({ Component }: AppProps) {
     <html lang="en">
       <Head>
         <meta charSet="utf-8" />
-        <title>Fresh </title>
+        <title>Fresh</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="stylesheet" href={asset("style.css")} />
       </Head>
       <body>
         <main>
-          <Component/>
+          <Component />
         </main>
       </body>
     </html>

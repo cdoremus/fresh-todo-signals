@@ -1,5 +1,5 @@
 import { useContext } from "preact/hooks";
-import { AppState } from "../components/App.tsx";
+import { AppState } from "./App.tsx";
 
 export default function TodoList() {
   const { todos, removeTodo } = useContext(AppState);
