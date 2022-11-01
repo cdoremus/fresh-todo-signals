@@ -37,14 +37,13 @@ label {
 .list-item {
   display: flex;
   align-content: left;
-  align-items: center;
+  align-items: left;
   margin: 0.4rem 0;
-  width: 200%
 }
 
 .item-todo {
   width: 140%;
-  text-align: right;
+  padding-right: 5px;
 }
 
 .x-button {
