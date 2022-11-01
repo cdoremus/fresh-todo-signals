@@ -27,13 +27,6 @@ label {
   margin: 2px;
 }
 
-li {
-  /* text-align: center; */
-  list-style: none;
-  /* padding-left: 40%; */
-  margin: 0.7em 0;
-}
-
 .todos {
   align-self: center;
   display: flex;
@@ -51,19 +44,12 @@ li {
 
 .item-todo {
   width: 140%;
-  /* padding-right: 5px; */
   text-align: right;
 }
 
 .x-button {
   margin-left: 0.5rem;
   align-content: left;
-}
-
-.confirm {
-  display: flex;
-  border: 0.1rem solid black;
-  margin: 0.25rem 0.5rem;
 }
 
 .todo-count {
