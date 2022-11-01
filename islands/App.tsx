@@ -2,6 +2,7 @@ import { createContext } from "preact";
 import state, { type AppStateType } from "../state.ts";
 import AddTodo from "../islands/AddTodo.tsx";
 import TodoList from "../islands/TodoList.tsx";
+import TodoCount from "./TodoCount.tsx";
 
 export const AppState = createContext<AppStateType>({} as AppStateType);
 
@@ -12,7 +13,9 @@ export default function App() {
         <h1>Deno Fresh Todos</h1>
         <TodoList />
         <AddTodo />
+        <TodoCount />
       </AppState.Provider>
+      <a className="standalone-counter" href="/counter">Local State Demo</a>
     </div>
   );
 }

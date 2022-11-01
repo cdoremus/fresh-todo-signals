@@ -6,7 +6,7 @@ export default function TodoList() {
   const { todos } = useContext(AppState);
   return (
     <div className="todos">
-      {todos.value?.map((item, i) => {
+      {todos.value?.map((item: string, i: number) => {
         return (
           <Todo text={item} index={i} />
         );

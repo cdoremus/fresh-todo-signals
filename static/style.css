@@ -44,15 +44,49 @@ li {
 .list-item {
   display: flex;
   align-content: left;
+  align-items: center;
   margin: 0.4rem 0;
+  width: 200%
 }
 
 .item-todo {
   width: 140%;
-  padding-right: 5px;
+  /* padding-right: 5px; */
+  text-align: right;
 }
 
 .x-button {
   margin-left: 0.5rem;
   align-content: left;
+}
+
+.confirm {
+  display: flex;
+  border: 0.1rem solid black;
+  margin: 0.25rem 0.5rem;
+}
+
+.todo-count {
+  font-size: 2.5rem;
+  padding-top: 2rem;
+}
+
+.standalone-counter {
+  margin: 2rem;
+  font-size: 2rem;
+}
+
+.home-link {
+  text-align: left;
+  font-size: 2.5rem;
+}
+
+.counter-title {
+  font-size: 2.3rem;
+  font-weight: 400;
+}
+
+.counter button {
+  font-size: 1.5rem;
+  margin: 0rem 0.5rem;
 }
