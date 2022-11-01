@@ -7,7 +7,6 @@ export default function Counter() {
   const square = useComputed(() => count.value * count.value);
   const dispose = effect(() => {
       localStorage.setItem(COUNT_KEY, count.value.toString());
-      console.log(`Double: ${square.value}`)
     });
   useEffect(() => {
     return () => {
