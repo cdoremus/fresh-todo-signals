@@ -5,9 +5,9 @@ This app is a Todo List written in [Deno Fresh](https://fresh.deno.dev), a
 It uses [Preact Signals](https://preactjs.com/blog/introducing-signals/) to
 handle state management.
 
-There also is an [Ultra 2.0](https://ultrajs.dev) version of this app created with React, Deno and the React version of Preact Signals in [this repo](https://github.com/cdoremus/ultra2-todo-signals).
+This app was created as an illustration for the blog article [Using Preact Signals with Fresh](https://deno-blog.com/Using_Preact_Signals_with_Fresh.2022-11-01).
 
-### Usage
+### Local Usage
 
 Start the project:
 
