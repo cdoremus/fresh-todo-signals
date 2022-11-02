@@ -8,10 +8,13 @@ body {
 }
 
 h1 {
-  text-align: center;
-  margin: 1rem auto 3rem;
-  font-size: clamp(2em, 10vw, 8em);
+  margin: 0 auto 0.3rem;
+  font-size: 5rem;
   font-weight: 400;
+}
+
+h2 {
+  margin: 0.25rem auto 4rem;
 }
 
 .App {
@@ -24,7 +27,7 @@ h1 {
 
 input,
 label {
-  margin: 2px;
+  margin: 0.25rem;
 }
 
 .todos {
@@ -43,7 +46,7 @@ label {
 
 .item-todo {
   width: 140%;
-  padding-right: 5px;
+  padding-right: 0.3rem;
 }
 
 .x-button {

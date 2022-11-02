@@ -10,7 +10,8 @@ export default function App() {
   return (
     <div className="App">
       <AppState.Provider value={state}>
-        <h1>Deno Fresh Todos</h1>
+        <h1>Deno Fresh Todo App</h1>
+        <h2>Using Preact Signals for State Management</h2>
         <TodoList />
         <AddTodo />
         <TodoCount />
