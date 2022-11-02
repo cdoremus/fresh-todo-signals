@@ -70,11 +70,16 @@ label {
 }
 
 .counter-title {
-  font-size: 2.3rem;
+  font-size: 5rem;
   font-weight: 400;
+  margin: 0 auto 4rem;
 }
 
 .counter button {
   font-size: 1.5rem;
   margin: 0rem 0.5rem;
+}
+
+.counter h2 {
+  margin: 0.25rem auto 2rem;
 }

@@ -18,7 +18,7 @@ export default function Counter() {
   return (
     <div className="counter">
       <div className="home-link"><a href="/">Home</a></div>
-      <div className="counter-title" style={{}}>Local State Demo</div>
+      <div className="counter-title">Local State Demo</div>
       <h2>Count: {count.value}</h2>
       <h2>Count Squared: {square.value}</h2>
       <button onClick={() => count.value = count.value + 1}>Increment Count</button>
