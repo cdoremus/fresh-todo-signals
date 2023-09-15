@@ -1,9 +1,7 @@
-import { Signal, signal } from "@preact/signals";
-import { assert, assertEquals, assertExists, assertFalse, assertStringIncludes } from "$std/testing/asserts.ts";
-import { cleanup, fireEvent, render, setup } from "$fresh-testing-library";
+import { assertEquals } from "$std/assert/mod.ts";
+import { cleanup, render, setup } from "$fresh-testing-library";
 import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
-import { createContext } from "preact";
-import state, { type AppStateType } from "../state.ts";
+import state from "../state.ts";
 import { AppState } from "../islands/App.tsx";
 import TodoCount from "../islands/TodoCount.tsx";
 
@@ -22,4 +20,5 @@ describe("TodoCount.tsx test", () => {
     const countElement = screen.getByText("Todo Count: " + todos.length);
     assertEquals("Todo Count: 3", countElement.textContent);
   });
+
 });

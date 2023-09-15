@@ -12,7 +12,7 @@ export default function Todo({text, index}: TodoProps) {
 
   return (
     <div className="list-item" key={text}>
-      <div className="item-todo">
+      <div className="item-todo" data-testid={"todo-" + index}>
         {text}
       </div>
       <button className="x-button" onClick={() => removeTodo(index)}>
