@@ -1,5 +1,4 @@
 import { useContext } from "preact/hooks";
-import { useSignal } from "@preact/signals";
 import { AppState } from "./App.tsx";
 
 type TodoProps = {
