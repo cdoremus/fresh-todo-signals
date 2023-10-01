@@ -11,24 +11,25 @@ describe("Todo.tsx test", () => {
 
   it("should display todo...", () => {
     const text = "Foo";
-    const screen = render(<Todo text={text} index={1}/>);
-    const textElement = screen.getByText(text);
+    const { getByText } = render(<Todo text={text} index={1}/>);
+    const textElement = getByText(text);
     assertExists(textElement);
     assertEquals(textElement.textContent, text);
   })
 
   it("should delete todo...", () => {
     const text = "Bar";
-    const ev = new Event("input"); // unused event
+    // dummy event, not used in function
+    const ev = new Event("foobar");
     // update current todo
     state.currentTodo.value = "Foo";
     state.addTodo(ev);
-    const screen = render(
+    const { getByRole } = render(
       <AppState.Provider value={state}>
         <Todo text={text} index={0}/>
       </AppState.Provider>
     );
-    const button = screen.getByRole("button");
+    const button = getByRole("button");
     // remove current todo
     fireEvent.click(button);
     assertEquals(state.todos.value.length, 0);

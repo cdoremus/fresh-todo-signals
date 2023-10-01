@@ -12,12 +12,12 @@ describe("TodoCount.tsx test", () => {
   it("should display number of todos...", () => {
     const todos = ["Foo", "Bar", "Baz"];
     state.todos.value = todos;
-    const screen = render(
+    const { getByText } = render(
       <AppState.Provider value={state}>
         <TodoCount/>
       </AppState.Provider>
     );
-    const countElement = screen.getByText("Todo Count: " + todos.length);
+    const countElement = getByText("Todo Count: " + todos.length);
     assertEquals("Todo Count: 3", countElement.textContent);
   });
 

@@ -12,12 +12,12 @@ describe("AddTodo.tsx test", () => {
   it("should add todo...", () => {
     const todo = "Current todo1";
     state.currentTodo.value = todo;
-    const screen = render(
+    const { getByLabelText } = render(
       <AppState.Provider value={state}>
         <AddTodo />
       </AppState.Provider>
     );
-    const input = screen.getByLabelText("Add todo:");
+    const input = getByLabelText("Add todo:");
     const val = (input as HTMLInputElement).value;
     // assert current todo value is input value
     assertEquals(val, todo);

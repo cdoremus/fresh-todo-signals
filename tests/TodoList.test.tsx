@@ -12,30 +12,31 @@ describe("TodoList.tsx test", () => {
   it("should display list of todos...", () => {
     const todos = ["Foo", "Bar", "Baz"];
     state.todos.value = todos;
-    const screen = render(
+    const { getByTestId, getAllByRole } = render(
       <AppState.Provider value={state}>
         <TodoList/>
       </AppState.Provider>
     );
-    const todo0 = screen.getByTestId("todo-0");
+    const todo0 = getByTestId("todo-0");
     assertExists(todo0);
-    const todo1 = screen.getByTestId("todo-1");
+    const todo1 = getByTestId("todo-1");
     assertExists(todo1);
-    const todo2 = screen.getByTestId("todo-2");
+    const todo2 = getByTestId("todo-2");
     assertExists(todo2);
-    const buttons = screen.getAllByRole("button");
+    const buttons = getAllByRole("button");
     assertEquals(buttons.length, 3)
   });
 
   it("should not display list of todos...",  () => {
     const todos = [] as string[];
     state.todos.value = todos;
-    const screen = render(
+    const { queryAllByRole } = render(
       <AppState.Provider value={state}>
         <TodoList/>
       </AppState.Provider>
     );
-    const buttons = screen.queryAllByRole("button");
+    // queryAllBy returns an empty array; getAllBy just throws error
+    const buttons = queryAllByRole("button");
     assertEquals(buttons.length, 0)
   });
 
