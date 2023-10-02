@@ -12,19 +12,19 @@ describe("TodoList.tsx test", () => {
   it("should display list of todos...", () => {
     const todos = ["Foo", "Bar", "Baz"];
     state.todos.value = todos;
-    const { getByTestId, getAllByRole } = render(
+    const { getAllByRole, queryByText } = render(
       <AppState.Provider value={state}>
         <TodoList/>
       </AppState.Provider>
     );
-    const todo0 = getByTestId("todo-0");
-    assertExists(todo0);
-    const todo1 = getByTestId("todo-1");
-    assertExists(todo1);
-    const todo2 = getByTestId("todo-2");
-    assertExists(todo2);
+    // verify that all todos are displayed
+    for(let i = 0; i < todos.length; i++) {
+      assertExists(queryByText(todos[i]));
+    }
+    // Each todo has a delete button
     const buttons = getAllByRole("button");
     assertEquals(buttons.length, 3)
+
   });
 
   it("should not display list of todos...",  () => {

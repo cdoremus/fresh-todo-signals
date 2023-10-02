@@ -8,7 +8,7 @@ export default function TodoList() {
     <div className="todos">
       {todos.value?.map((item: string, i: number) => {
         return (
-          <Todo text={item} index={i} data-testid={`todo-${i}`}/>
+          <Todo text={item} index={i} />
         );
       })}
     </div>
