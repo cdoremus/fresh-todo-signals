@@ -1,13 +1,24 @@
+import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useEffect } from "preact/hooks";
 import { useSignal, useComputed, effect } from "@preact/signals";
 
+const COUNT_KEY = "COUNT";
+
 export default function Counter() {
-  const COUNT_KEY = "COUNT";
-  const count = useSignal<number>(parseInt(localStorage.getItem(COUNT_KEY) ?? "0"));
+  const fetchCount = ():string => {
+    if (IS_BROWSER) {
+      return localStorage.getItem(COUNT_KEY) ?? "0"
+    } else {
+      return "0";
+    }
+  }
+    const count = useSignal<number>(parseInt(fetchCount()));
   const square = useComputed(() => count.value * count.value);
   const dispose = effect(() => {
+    if (IS_BROWSER) {
       localStorage.setItem(COUNT_KEY, count.value.toString());
-    });
+    }
+  });
   useEffect(() => {
     return () => {
       // free-up effect's memory

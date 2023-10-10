@@ -7,19 +7,35 @@ describe("Counter.tsx tests", () => {
   beforeAll(setup);
   afterEach(cleanup);
 
-  it("should display count", () => {
-    window.localStorage.setItem("COUNT", "10");
-    const { queryByText } = render(<Counter />);
-    const countElement = queryByText("Count: 10");
+  it("should display count and count squared", () => {
+    const { queryByText, debug, getByRole } = render(<Counter />);
+    // debug();
+    const increment = getByRole("button", {name: "Increment Count"});
+    // increment twice
+    fireEvent.click(increment);
+    fireEvent.click(increment);
+    const countElement = queryByText("Count: 2");
     assertExists(countElement);
-    assertEquals("Count: 10", countElement.textContent);
+    assertEquals("Count: 2", countElement.textContent);
+    const countElement2 = queryByText("Count Squared: 4");
+    assertExists(countElement2);
+    assertEquals("Count Squared: 4", countElement2.textContent);
   });
 
-  it("should display count squared", () => {
-    window.localStorage.setItem("COUNT", "9");
-    const { queryByText } = render(<Counter />);
-    const countElement = queryByText("Count Squared: 81");
+  it("should reset count", () => {
+    const { queryByText, getByRole } = render(<Counter />);
+    const increment = getByRole("button", {name: "Increment Count"});
+    fireEvent.click(increment);
+    fireEvent.click(increment);
+    const countElement = queryByText("Count: 2");
     assertExists(countElement);
-    assertEquals("Count Squared: 81", countElement.textContent);
+    assertEquals("Count: 2", countElement.textContent);
+    const reset = getByRole("button", {name: "Reset Count"});
+    // reset count
+    fireEvent.click(reset);
+    const countElement0 = queryByText("Count: 0");
+    assertExists(countElement0);
+    assertEquals("Count: 0", countElement0.textContent);
+
   });
 });
