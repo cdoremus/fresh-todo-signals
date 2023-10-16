@@ -1,5 +1,5 @@
 import { assertEquals, assertExists } from "$std/assert/mod.ts";
-import { cleanup, fireEvent, render, setup } from "$fresh-testing-library";
+import { cleanup, render, setup, userEvent } from "$fresh-testing-library";
 import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
 import state from "../state.ts";
 import { AppState } from "../islands/App.tsx";
@@ -17,7 +17,8 @@ describe("Todo.tsx test", () => {
     assertEquals(textElement.textContent, text);
   })
 
-  it("should delete todo...", () => {
+  it("should delete todo...", async () => {
+    const user = userEvent.setup();
     const text = "Bar";
     // dummy event, not used in function
     const ev = new Event("foobar");
@@ -31,8 +32,8 @@ describe("Todo.tsx test", () => {
     );
     const button = getByRole("button");
     // remove current todo
-    fireEvent.click(button);
-    assertEquals(state.todos.value.length, 0);
+    await user.click(button);
+    assertEquals(state.todos.value.length, 0)
   })
 
 });
