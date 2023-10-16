@@ -9,7 +9,7 @@ describe("AddTodo.tsx test", () => {
   beforeAll(setup);
   afterEach(cleanup);
 
-  it("should add todo...", () => {
+  it("should add todo...", async () => {
     const todo = "Current todo1";
     state.currentTodo.value = todo;
     const { getByLabelText } = render(
@@ -23,7 +23,7 @@ describe("AddTodo.tsx test", () => {
     assertEquals(val, todo);
     const newVal = "New value";
     (input as HTMLInputElement).value = newVal;
-    fireEvent.change(input);
+    await fireEvent.change(input);
     assertEquals(state.currentTodo.value, newVal);
   })
 });
