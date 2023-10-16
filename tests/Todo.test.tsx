@@ -1,5 +1,5 @@
 import { assertEquals, assertExists } from "$std/assert/mod.ts";
-import { cleanup, render, setup, userEvent } from "$fresh-testing-library";
+import { cleanup, render, setup, userEvent } from "$fresh-testing-library/components.ts";
 import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
 import state from "../state.ts";
 import { AppState } from "../islands/App.tsx";

@@ -1,9 +1,9 @@
-import { cleanup, render, setup } from "$fresh-testing-library";
+import { cleanup, render, setup } from "$fresh-testing-library/components.ts";
 import { afterEach, beforeAll, describe, it } from "$std/testing/bdd.ts";
 import state from "../state.ts";
 import { AppState } from "../islands/App.tsx";
 import TodoList from "../islands/TodoList.tsx";
-import { assertEquals, assertExists } from "$std/assert/mod.ts";
+import { assertEquals, assertExists, assertNotEquals } from "$std/assert/mod.ts";
 
 describe("TodoList.tsx test", () => {
   beforeAll(setup);
